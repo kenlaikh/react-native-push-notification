@@ -788,18 +788,10 @@ public class RNPushNotificationHelper {
         }
     }
 
-    public void cancelScheduledNotification(ReadableMap userInfo) {
+    public void cancelScheduledNotificationIfExist(String notificationIDString) {
         for (String id : scheduledNotificationsPersistence.getAll().keySet()) {
-            try {
-                String notificationAttributesJson = scheduledNotificationsPersistence.getString(id, null);
-                if (notificationAttributesJson != null) {
-                    RNPushNotificationAttributes notificationAttributes = fromJson(notificationAttributesJson);
-                    if (notificationAttributes.matches(userInfo)) {
-                        cancelScheduledNotification(id);
-                    }
-                }
-            } catch (JSONException e) {
-                Log.w(LOG_TAG, "Problem dealing with scheduled notification " + id, e);
+            if (id.equals(notificationIDString)) {
+                cancelScheduledNotification(id);
             }
         }
     }

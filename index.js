@@ -470,11 +470,11 @@ Notifications.scheduleLocalNotification = function() {
   return this.callNative('scheduleLocalNotification', arguments);
 };
 
-Notifications.cancelLocalNotifications = function(userInfo) {
+Notifications.cancelLocalNotification = function(id) {
   if ( Platform.OS === 'ios' ) {
-    return this.callNative('removePendingNotificationRequests', [[userInfo.id]]);
+    return this.callNative('removePendingNotificationRequests', [[id]]);
   } else {
-    return this.callNative('cancelLocalNotifications', [userInfo]);
+    return this.callNative('cancelLocalNotification', [id]);
   }
 };
 

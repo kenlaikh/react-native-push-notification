@@ -32,8 +32,8 @@ NotificationsComponent.prototype.subscribeToTopic = function(topic) {
 	RNPushNotification.subscribeToTopic(topic);
 };
 
-NotificationsComponent.prototype.cancelLocalNotifications = function(details) {
-	RNPushNotification.cancelLocalNotifications(details);
+NotificationsComponent.prototype.cancelLocalNotification = function(details) {
+	RNPushNotification.cancelLocalNotification(details);
 };
 
 NotificationsComponent.prototype.clearLocalNotification = function(details, tag) {
