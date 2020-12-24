@@ -769,6 +769,7 @@ public class RNPushNotificationHelper {
                 notificationMap.putString("repeatInterval", notification.getRepeatType());
                 notificationMap.putString("soundName", notification.getSound());
                 notificationMap.putString("data", notification.getUserInfo());
+                notificationMap.putString("tag", notification.getTag());
 
                 scheduled.pushMap(notificationMap);
             } catch (JSONException e) {

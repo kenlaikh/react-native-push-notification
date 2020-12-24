@@ -541,7 +541,8 @@ Notifications.getScheduledLocalNotifications = function(callback) {
 						number: notif?.badge,
 						message: notif?.body,
             title: notif?.title,
-            data: notif?.userInfo
+            data: notif?.userInfo,
+            userInfo: notif?.userInfo,
 					})
 				})
 			} else if(Platform.OS === 'android') {
@@ -559,7 +560,8 @@ Notifications.getScheduledLocalNotifications = function(callback) {
 						number: notif.number,
 						message: notif.message,
 						title: notif.title,
-						data: notif.data,
+            data: notif.data,
+            tag: notif.tag,
 					})
 				})
 			}

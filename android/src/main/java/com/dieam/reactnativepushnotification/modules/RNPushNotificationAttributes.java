@@ -417,4 +417,8 @@ public class RNPushNotificationAttributes {
     public double getFireDate() {
         return fireDate;
     }
+
+    public String getTag() {
+        return tag;
+    }
 }
